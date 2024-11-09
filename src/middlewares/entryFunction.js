@@ -1,18 +1,22 @@
 import Admin from "../models/admin_model.js";
 import User from "../models/usuario_model.js";
-import Form from "../models/formulario_model.js"
 
-
-const  entradaInstituicao = async(req,res, next) => {
+const entradaInstituicao = async (req, res, next) => {
     try {
-        if(Admin.includes(req.params.digital) || User.includes(req.params.digital)){
-            this.entryHour = 17;
-            res.json("Entrada com sucesso!")    
+        const digital = req.params.digital;
+        const adminExists = await Admin.findOne({ digital });
+        const userExists = await User.findOne({ digital });
+
+        if (adminExists || userExists) {
+            const entryHour = 17; // Armazene isso onde for necessário
+            res.json("Entrada com sucesso!");
+        } else {
+            res.status(404).json("Entrada não autorizada.");
         }
     } catch (error) {
         console.log(error);
+        res.status(500).json("Erro ao processar a entrada.");
     }
 }
 
 export default entradaInstituicao;
-

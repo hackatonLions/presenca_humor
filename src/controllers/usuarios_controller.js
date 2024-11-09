@@ -4,7 +4,7 @@ import Formulario from "../models/formulario_model.js";
 export const store = async (req,res) => {
     try {
         const content = req.body;
-        if(content.role != "PROFESSOR"){
+        if(content.role != "PAI"){
             content.alunos = undefined;
         }
         const user = await User.create(content);
@@ -43,11 +43,11 @@ export const show = async (req,res) => {
 export const consultarPresencas = async(req, res) => {
     try{
         //Funciona apenas com autenticação
-        if(req.user.role == "PROFESSOR"){
+        if(req.user.role == "PAI"){
             let content = await User.findById(req.user._id).populate("alunos").exec();
             content = content.alunos;
             res.status(200).json(content);
-        } else if(req.user.role == "ALUNO"){
+        } else if(req.user.role == "FILHO"){
             const content = await Formulario.find({user: req.user._id});
             res.status(200).json(content);
         } else{
