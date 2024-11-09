@@ -1,0 +1,157 @@
+<!DOCTYPE html> 
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>employee_register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/principal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <p class="index-title">Registro de Humor<i class="fa-solid fa-wave-hand" id="hello-icon"></i></p>
+    
+    <div class="d-flex">
+        <div class="content flex-grow-1">
+            <p class="index-text-humor">Escolha uma ou mais emoções que mais te representam no momento</p>
+            <div>
+                
+                <div class="humor-box-check">
+                    <button type="submit" class="btn btn-primary-humor">
+                        <img src="icons/happy-simle.svg" alt="Ícone de Início" class="icon-humor"> 
+                        <span class="humor-form-text">Feliz</span>
+                        <input type="checkbox" class="humor-checkbox" id="feliz">
+                    </button>
+                </div>
+                <div class="humor-box-check">
+                    <button type="submit" class="btn btn-primary-humor">
+                        <img src="icons/sunglasses.svg" alt="Ícone de Início" class="icon-humor"> 
+                        <span class="humor-form-text">Motivado (a)</span>
+                        <input type="checkbox" class="humor-checkbox" id="feliz">
+                    </button>
+                </div>
+                <div class="humor-box-check">
+                    <button type="submit" class="btn btn-primary-humor">
+                        <img src="icons/sleeping-snore-tired.svg" alt="Ícone de Início" class="icon-humor"> 
+                        <span class="humor-form-text">Contente</span>
+                        <input type="checkbox" class="humor-checkbox" id="feliz">
+                    </button>
+                </div>
+                <div class="humor-box-check">
+                    <button type="submit" class="btn btn-primary-humor">
+                        <img src="icons/happy-cheerful.svg" alt="Ícone de Início" class="icon-humor"> 
+                        <span class="humor-form-text">Animado (a)</span>
+                        <input type="checkbox" class="humor-checkbox" id="feliz">
+                    </button>
+                </div>
+                <div class="humor-box-check">
+                    <button type="submit" class="btn btn-primary-humor">
+                        <img src="icons/laugh-smile.svg" alt="Ícone de Início" class="icon-humor"> 
+                        <span class="humor-form-text">Divertido (a)</span>
+                        <input type="checkbox" class="humor-checkbox" id="feliz">
+                    </button>
+                </div>
+                <div class="humor-box-check">
+                    <button type="submit" class="btn btn-primary-humor">
+                        <img src="icons/sad-gradient.svg" alt="Ícone de Início" class="icon-humor"> 
+                        <span class="humor-form-text">Triste</span>
+                        <input type="checkbox" class="humor-checkbox" id="feliz">
+                    </button>
+                </div>
+                <div class="humor-box-check">
+                    <button type="submit" class="btn btn-primary-humor">
+                        <img src="icons/feeling-sick.svg" alt="Ícone de Início" class="icon-humor"> 
+                        <span class="humor-form-text">Indisposto (a)</span>
+                        <input type="checkbox" class="humor-checkbox" id="feliz">
+                    </button>
+                </div>
+                <div class="humor-box-check">
+                    <button type="submit" class="btn btn-primary-humor">
+                        <img src="icons/feeling-puke.svg" alt="Ícone de Início" class="icon-humor"> 
+                        <span class="humor-form-text">Enjoado (a)</span>
+                        <input type="checkbox" class="humor-checkbox" id="feliz">
+                    </button>
+                </div>
+                <div class="humor-box-check">
+                    <button type="submit" class="btn btn-primary-humor">
+                        <img src="icons/dislike-expression.svg" alt="Ícone de Início" class="icon-humor"> 
+                        <span class="humor-form-text">Mal-humorado (a)</span>
+                        <input type="checkbox" class="humor-checkbox" id="feliz">
+                    </button>
+                </div>
+            </div>
+            <div class="humor-box-confirm">
+                <button type="submit" class="btn">
+                    <label for="feliz">
+                        <span class="humor-form-confirm">Continuar</span>
+                    </label>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="footer-container"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+    <script>
+    
+        const toggleBtn = document.querySelector('.toggle-btn');
+        const menu = document.querySelector('.menu');
+
+        if (toggleBtn) {
+                toggleBtn.addEventListener('click', () => {
+                    if (menu) {
+                        menu.classList.toggle('hidden');
+                        toggleBtn.querySelector('i').classList.toggle('fa-chevron-down');
+                        toggleBtn.querySelector('i').classList.toggle('fa-chevron-up');
+                    }
+                });
+            }
+
+        fetch("../components/header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            const sidebar = document.getElementById('sidebar');
+
+            if (menuIcon) {
+                    menuIcon.addEventListener('click', () => {
+                        if (sidebar) {
+                            sidebar.classList.add('open');
+                        }
+                    });
+                }
+
+                if (closeIcon) {
+                    closeIcon.addEventListener('click', () => {
+                        if (sidebar) {
+                            sidebar.classList.remove('open');
+                        }
+                    });
+                }
+        })
+        .catch(error => console.error('Erro ao carregar o header:', error));
+
+        fetch('../components/footer.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Houve um problema com a requisição Fetch:', error);
+            });
+    </script>
+</body>
+</html>
