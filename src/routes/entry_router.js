@@ -6,5 +6,4 @@ const router = Router();
 
 router.post("/:digital", funcoesEntrada);
 
-
 export default router

@@ -5,12 +5,17 @@ import {
     show,
     update,
     destroy,
-    consultarPresencas
+    consultarPresencas,
+    signup,
+    login
 } from "../controllers/usuarios_controller.js";
 /*import auth_user from "../middlewares/auth_user.js"
 import auth_admin from "../middlewares/auth_admin.js"*/
 
 const router = Router();
+
+//router.post("/", signup);
+//router.post("/" login);
 
 //router.use(auth_user);
 
