@@ -11,36 +11,47 @@
 </head>
 <body>
     <div id="header-container"></div>
+    <p class="index-title">Formulário<i class="fa-solid fa-wave-hand" id="hello-icon"></i></p>
     
     <div class="d-flex">
         <div class="content flex-grow-1">
-            <p class="index-title">Olá! <i class="fa-solid fa-wave-hand" id="hello-icon"></i></p>
-            <p class="index-text">Como está se sentindo hoje?</p>
-            <div>
-                <div class="humor-box">
-                    <button type="submit" class="btn btn-primary">
-                        <img src="icons/happy-simle.svg" alt="Ícone de Início" class="icon-humor"> 
-                        <span class="humor-form-text">Registrar Humor</span>
-                    </button>
-                </div>
+            <p class="index-text-humor">Deixe suas palavras</p>
             
-                <div class="humor-box">
-                    <button type="submit" class="btn btn-primary">
-                        <img src="icons/clock.svg" alt="Ícone de Início" class="icon-humor"> 
-                        <span class="humor-form-text"> Ver Histórico</span>
-                    </button>
-                </div>
+            <form>
+                <label class="form-title" for="texto1">Pergunta persolalizada 1:</label>
+                <textarea name="texto1" rows="3" class="form-control mb-2"></textarea>
+            </form>
             
-                <div class="humor-box">
-                    <button type="submit" class="btn btn-primary">
-                        <img src="icons/report.svg" alt="Ícone de Início" class="icon-humor"> 
-                        <span class="humor-form-text">Ver Relatório</span>
-                    </button>
-                </div>
-            </div>
+            <form>
+                <label class="form-title" for="texto2">Pergunta persolalizada 2:</label>
+                <textarea name="texto2" rows="3" class="form-control mb-2"></textarea>
+            </form>
+            
+            <form>
+                <label class="form-title" for="texto3">Pergunta persolalizada 3:</label>
+                <textarea name="texto3" rows="3" class="form-control mb-2"></textarea>
+            </form>
+            
+            <form>
+                <label class="form-title" for="texto4">Pergunta persolalizada 4:</label>
+                <textarea name="texto4" rows="3" class="form-control mb-2"></textarea>
+            </form>
+            
+            <form>
+                <label class="form-title" for="texto5">Pergunta persolalizada 5:</label>
+                <textarea name="texto5" rows="3" class="form-control mb-2"></textarea>
+            </form>
+            
         </div>
+        
     </div>
-    
+    <div class="humor-box-confirm">
+        <button type="submit" class="btn">
+            <label for="feliz">
+                <span class="humor-form-confirm">Enviar</span>
+            </label>
+        </button>
+    </div>
 
     <div id="footer-container"></div>
     
