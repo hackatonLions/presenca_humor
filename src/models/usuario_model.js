@@ -24,7 +24,17 @@ const userSchema = new Schema({
     },
     role:{
         type: Schema.Types.String,
-        enum: ["ALUNO", "PROFESSOR"],
+        enum: ["FILHO", "PAI"],
+        required: true
+    },
+    level:{
+        type: Schema.Types.Number,
+        default: 1,
+        required: true
+    },
+    exp:{
+        type: Schema.Types.Number,
+        default: 0,
         required: true
     },
     alunos:{
