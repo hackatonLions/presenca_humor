@@ -1,0 +1,20 @@
+{
+  "name": "presenca_humor",
+  "version": "1.0.0",
+  "description": "Repositório para criação de uma chamada com registro de humor e confirmação de presença",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackatonLions/presenca_humor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hackatonLions/presenca_humor/issues"
+  },
+  "homepage": "https://github.com/hackatonLions/presenca_humor#readme"
+}

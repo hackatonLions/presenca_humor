@@ -1,0 +1,173 @@
+<!DOCTYPE html> 
+<style>
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    header {
+        background-color: rgba(11, 126, 67, 1);
+        padding: 5px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #menu-icon {
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    #user-icon {
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+        margin-left: auto;
+    }
+
+    header a {
+        margin: 0 auto;
+    }
+
+    header img {
+        max-height: 70px;
+        display: block;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -350px;
+        width: 250px;
+        height: 100%;
+        background-color: rgba(211, 186, 65, 1);
+        color: rgba(245, 246, 248, 1);
+        transition: left 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        z-index: 2000;
+        text-align: center;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .sidebar i {
+        font-size: 24px;
+        cursor: pointer;
+        color: #fff;
+        align-self: flex-end;
+    }
+
+    .sidebar nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .sidebar li {
+        width: 100%;
+        padding: 25px;
+        box-sizing: border-box;
+        position: relative;   
+    }
+
+    .sidebar li:not(:last-child)::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -20px;
+        width: calc(100% + 40px);
+        height: 1px;
+        background-color: #fff;
+    }
+
+    .sidebar a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 25px;
+        display: block;
+    }
+
+    .sidebar a:hover {
+        text-decoration: underline;
+    }
+
+    /* Modal styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 10px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px;
+        border: none;
+        background: none;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    h3 {
+        padding: 10px 10px;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        color: #ffffff;
+        font-family: "Poppins", system-ui;
+    }
+</style>
+<div id="sidebar" class="sidebar">
+    <i class="fa-solid fa-times" id="close-icon"></i>
+    <nav>
+        <ul>
+            <li><a href="/home/felipe/Documentos/presenca_humor/src/view/principal/principal.html">Inicio</a></li>
+            <li><a href="#">Histórico</a></li>
+    </nav>
+</div>
+
+<header>
+    <i class="fa-solid fa-bars" id="menu-icon"></i>
+    <i class="fa-solid fa-circle-user" id="user-icon"></i>
+    <h3 id="username-display">Usuário</h3> <!-- Exemplo de nome de usuário -->
+</header>
