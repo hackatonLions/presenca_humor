@@ -4,9 +4,19 @@ import {
     index,
     show,
     update,
-    destroy
+    destroy,
+    consultarPresencas
 } from "../controllers/usuarios_controller.js";
+/*import auth_user from "../middlewares/auth_user.js"
+import auth_admin from "../middlewares/auth_admin.js"*/
+
 const router = Router();
+
+//router.use(auth_user);
+
+router.get("/consultar", consultarPresencas);
+
+//router.use(auth_admin);
 
 router.post("/", store);
 router.get("/", index);

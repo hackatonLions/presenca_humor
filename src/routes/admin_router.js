@@ -6,6 +6,7 @@ import {
     update,
     destroy
 } from "../controllers/admin_controller.js";
+
 const router = Router();
 
 router.post("/", store);

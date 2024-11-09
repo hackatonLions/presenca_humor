@@ -7,6 +7,7 @@ const userSchema = new Schema({
     },
     digital: {
         type: Schema.Types.Number,
+        unique: true,
         required: true
     },
     appBlocked: {
@@ -20,6 +21,15 @@ const userSchema = new Schema({
     exitHour: {
         type: Schema.Types.Number,
         default: 0
+    },
+    role:{
+        type: Schema.Types.String,
+        enum: ["ALUNO", "PROFESSOR"],
+        required: true
+    },
+    alunos:{
+        type: [Schema.ObjectId],
+        ref: "user"
     }
 })
 
