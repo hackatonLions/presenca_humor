@@ -12,6 +12,14 @@ const userSchema = new Schema({
     appBlocked: {
         type: Schema.Types.Boolean,
         default: true
+    },
+    entryHour: {
+        type: Schema.Types.Number,
+        default: 0
+    },
+    exitHour: {
+        type: Schema.Types.Number,
+        default: 0
     }
 })
 
